@@ -1,13 +1,11 @@
 # Chad Verbus
-# CSC325 - Python
-# 11152025
+# CSC235 - Python
+# 11162025
 
 import os
 import random
 import re
-from unittest import case
 
-# vars
 # regex
 employee_id_pattern : re.Pattern = re.compile(r'^[\d]{6}$')
 # state
