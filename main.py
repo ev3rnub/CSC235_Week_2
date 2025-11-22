@@ -5,6 +5,8 @@
 import os
 import random
 import re
+from _pyrepl.commands import clear_screen
+from time import sleep
 
 # regex
 employee_id_pattern : re.Pattern = re.compile(r'^[\d]{6}$')
@@ -575,6 +577,13 @@ if __name__ == '__main__':
     print("Then goto the Automation Menu, and turn on the automation interface, exit the automation menu, then exit to main menu.\n")
     print("This terminal would control the generation of Verbose Robotics Dora Type D defense series sentry hominid robot\n")
     print("On the main interface, each input, or pressing Enter advances the production of robots by 1 turn.\n")
-    print("No point to this simulation, I ran out of time :( \n")
+    print("No point to this simulation, I ran out of time :(. However I can use this as a model for a example. \n")
+    #fake connecting to use a for loop
+    someString = "Connecting to Outpost #19"
+    for i in range(4):
+        print(cyan_output(f"{someString}"))
+        someString = someString + "."
+        sleep(1)
+        os.system("clear")
     isrunning = True
     main()
