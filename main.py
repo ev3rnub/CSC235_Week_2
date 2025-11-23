@@ -5,7 +5,6 @@
 import os
 import random
 import re
-from _pyrepl.commands import clear_screen
 from time import sleep
 
 # regex
