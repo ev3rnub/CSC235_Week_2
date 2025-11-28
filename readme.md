@@ -1,6 +1,6 @@
 Course: CSC235
 Author: Chad Verbus
-Date: Nov 22, 2025
+Date: Nov 28, 2025
 
 
 ⚠️ Working Document – This README is a living document that will be updated throughout the semester as new topics, assignments, and resources become available.  
@@ -11,3 +11,6 @@ Date: Nov 22, 2025
 
 ## 11/22/2025
 * 1. Added a for loop to the simulated terminal control interface to satisfy this weeks assignment to simulate connecting to the Outposts network.
+
+## 11/28/2025
+* 1. Added a dictionary to the simulated terminal control interface to satisfy this weeks assignment. Added problemMenu to use the dictionary to display data.
