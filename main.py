@@ -171,8 +171,6 @@ def inputFilter(name):
             print("\n\n\n")
             print("\n\n\n")
             print("\n\n\n")
-            print("\n\n\n")
-            print("\n\n\n")
         case "help menu":
             inputFilter("help")
         case "help":
@@ -314,7 +312,7 @@ def newTurn():
 # First menu after logging in, displays the main interface with options to start the automation menu, power menu, or
 # quit.
 def start_auto_menu():
-    global userName
+    #global userName
     global turn
     turn += 1
     print(f"----------------------AUTHORIZATION GRANTED {userName}-----------------")
@@ -323,7 +321,8 @@ def start_auto_menu():
     print("--------------Please enter a command from the following list-----------")
     print("-- type (1). --------------------------------------automation Interface")
     print("-- type (2). -------------------------------------------power Interface")
-    print("-- type (3|q|e|exit|quit). -----------------------------------------EXIT")
+    print("-- type (3). -----------------------------------------problem Interface")
+    print("-- type (4|q|e|exit|quit). -----------------------------------------EXIT")
     print("-----------------------------------------------------------------------")
     print("\n\n\n")
     print("\n\n\n")
@@ -339,10 +338,62 @@ def start_auto_menu():
             automation_menu()
         case "2":
             power_menu()
-        case "3" | "q" | "quit" | "exit":
+        case "3":
+            problem_menu()
+        case "4" | "q" | "quit" | "exit":
             isrunning = False
         case _:
             inputFilter(getInput)
+            
+# problem menu
+def problem_menu():
+    someProblemDict: Dict[str, str] = {
+        "Problem 1": "Power stability due to load/demand.",
+        "Problem 2": "Robot manufactoring line is slow due to ongoing maintenence."
+    }
+    problemMenu = True
+    while problemMenu:
+        print("-----------------------------------------------------------------------")
+        print(f"{userName}--------------AutoOutpostTerm19 Problems---------------------")
+        print("-----------------------------------------------------------------------")
+        print("----------- Please enter a command from the following list ------------")
+        print("-- type (1). ---------------------------------------------View Problems")
+        print("-- type (2|quit|q|exit|e). ----------------------------------------EXIT")
+        print("-----------------------------------------------------------------------")
+        print("\n\n\n")
+        print("\n\n\n")
+        print("\n\n\n")
+        print("\n\n\n")
+        print("\n\n\n")
+        print("\n\n\n")
+        print("\n\n\n")
+        print("\n\n\n")
+        someInput = input(green_output("{userName} - AutoOutpostTerm19|RobotProduction|Problems>> "))
+        match someInput:
+            case "1":
+                print("-----------------------------------------------------------------------")
+                print(f"{userName}--------------AutoOutpostTerm19 Problems---------------------")
+                print("-----------------------------------------------------------------------")
+                print("------------------------ List of unresovled problems ------------------")
+                print(f"Problem 1 -----------------------{someProblemDict["Problem 1"]}")
+                print(f"Problem 2 -----------------------{someProblemDict["Problem 2"]}")
+                print("-- type (2|quit|q|exit|e). ----------------------------------------EXIT")
+                print("-----------------------------------------------------------------------")
+                print("\n\n\n")
+                print("\n\n\n")
+                print("\n\n\n")
+                print("\n\n\n")
+                print("\n\n\n")
+                print("\n\n\n")
+                print("\n\n\n")
+                print("\n\n\n")
+                someInput = input(green_output("{userName} - AutoOutpostTerm19|RobotProduction|Problems|View>> "))
+            case "2" | "exit" | "q" | "quit":
+                print("Exiting AutoOutpostTerm19")
+                problemMenu = False;
+                start_auto_menu()
+            case _:
+                print("Invalid Input")
 # power menu
 def power_menu():
     global powerOn
