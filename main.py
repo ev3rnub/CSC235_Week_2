@@ -345,7 +345,7 @@ def start_auto_menu():
         case _:
             inputFilter(getInput)
             
-# problem menu
+# problem menu with a dictionary that holds problems.
 def problem_menu():
     someProblemDict: Dict[str, str] = {
         "Problem 1": "Power stability due to load/demand.",
